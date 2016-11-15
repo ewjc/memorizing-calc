@@ -10,12 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    enum calcOperator: String {
+        case add = "+"
+        case subtract = "-"
+        case equal = "="
+        case clear = ""
+    }
+    
+    var initialNumber = ""
+    var saveNumber = ""
+    var totalNumber = ""
     
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var clearLabelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var subtractButton: UIButton!
     @IBOutlet weak var equalButton: UIButton!
+    @IBAction func numberButtonPressed(_ sender: UIButton) {
+        initialNumber += "\(sender.tag)"
+        answerLabel.text = "\(initialNumber)"
+    }
+    
+    @IBAction func add(_ sender: UIButton) {
+        
+    }
+    
+    func processOperation (operation: calcOperator) {
+        
+    }
     
     
     
@@ -24,12 +46,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
 
 
 }

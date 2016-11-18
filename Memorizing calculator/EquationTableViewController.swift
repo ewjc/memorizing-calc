@@ -12,9 +12,9 @@ class EquationTableViewController: UITableViewController {
     
     var VC: ViewController!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,9 +29,11 @@ class EquationTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 1
-//        return VC.equationArray.count
+        if VC.equationArray.count == nil {
+            return 5
+        } else {
+        return VC.equationArray.count
+        }
     }
 
 

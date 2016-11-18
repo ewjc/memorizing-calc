@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var equationArray: [String]!
+    var equationArray: [String]! = []
     var runningNumber = ""
     var saveNumber = ""
     var leftNumber = ""
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var subtractButton: UIButton!
     @IBOutlet weak var equalButton: UIButton!
+    @IBOutlet weak var completedResults: UILabel!
     
     func calculate() {
         var firstNumber = Int(leftNumber)
@@ -70,6 +71,9 @@ class ViewController: UIViewController {
         calculate()
         var equation = "\(leftNumber) \(operand) \(rightNumber) = \(answer!)"
         equationArray.append(equation)
+        
+        completedResults.text = "Completed Results: \(equationArray.count)"
+        print(equationArray)
     }
 
     
@@ -83,7 +87,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        completedResults.text = "Completed Results: \(equationArray.count)"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "destinationVC" {
+        let destinationVC = segue.destination as! EquationTableViewController
+            destinationVC.VC = self
+        }
     }
 
 

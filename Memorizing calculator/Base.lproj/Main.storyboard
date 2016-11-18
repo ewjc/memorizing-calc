@@ -255,6 +255,7 @@
                         <outlet property="addButton" destination="HN0-JI-CTt" id="hPC-q8-Skh"/>
                         <outlet property="answerLabel" destination="RH5-DK-0i4" id="PPX-fb-Atw"/>
                         <outlet property="clearLabelButton" destination="Ffm-xN-dJW" id="VFi-ey-eQt"/>
+                        <outlet property="completedResults" destination="VdH-fK-bh8" id="GLQ-XY-MNJ"/>
                         <outlet property="equalButton" destination="Xkz-6c-YzL" id="9sF-16-eX1"/>
                         <outlet property="subtractButton" destination="jf8-pv-p3n" id="4Ps-1a-N2g"/>
                     </connections>
@@ -276,7 +277,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GGk-fa-xOV" id="KVW-Z4-Mko">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz1-Ry-k9I">

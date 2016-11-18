@@ -9,6 +9,8 @@
 import UIKit
 
 class EquationTableViewCell: UITableViewCell {
+    
+    //MARK: IBOutlets
     @IBOutlet weak var completeEquationLabel: UILabel!
 
     override func awakeFromNib() {

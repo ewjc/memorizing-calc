@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: Properties
     var equationArray: [String]! = []
     var runningNumber = ""
     var saveNumber = ""
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     var answer: Int!
     var operand = ""
     
+    // MARK: IBOutlets
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var clearLabelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
@@ -25,6 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalButton: UIButton!
     @IBOutlet weak var completedResults: UILabel!
     
+    //MARK: Functions
     func calculate() {
         var firstNumber = Int(leftNumber)
         var secondNumber = Int(rightNumber)
@@ -38,8 +41,8 @@ class ViewController: UIViewController {
         }
     }
     
-
     
+    //MARK: IBActions
     @IBAction func numberButtonPressed(_ sender: UIButton) {
         runningNumber += "\(sender.tag)"
         answerLabel.text = "\(runningNumber)"
@@ -65,20 +68,18 @@ class ViewController: UIViewController {
         }
     }
 
-    
     @IBAction func equal(_ sender: UIButton) {
         rightNumber = runningNumber
         calculate()
         if answer != nil {
-        var equation = "\(leftNumber) \(operand) \(rightNumber) = \(answer!)"
-        equationArray.append(equation)
-        rightNumber = ""
-        completedResults.text = "Completed Results: \(equationArray.count)"
+            var equation = "\(leftNumber) \(operand) \(rightNumber) = \(answer!)"
+            equationArray.append(equation)
+            rightNumber = ""
+            completedResults.text = "Completed Results: \(equationArray.count)"
             print(equationArray)
         }
     }
 
-    
     @IBAction func clear(_ sender: UIButton) {
         runningNumber = ""
         leftNumber = ""
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
         answerLabel.text = ""
     }
     
-    
+    //MARK: View Did Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         completedResults.text = "Completed Results: \(equationArray.count)"
@@ -94,12 +95,12 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "destinationVC" {
-        let destinationVC = segue.destination as! EquationTableViewController
+            let destinationVC = segue.destination as! EquationTableViewController
             destinationVC.VC = self
         }
     }
-
-
-
+    
+    
+    
 }
 

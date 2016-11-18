@@ -129,6 +129,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="subtract:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HOi-NV-Fy5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -179,6 +182,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <state key="normal" title="="/>
+                                                <connections>
+                                                    <action selector="equal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcy-e2-UVN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -205,6 +211,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yc4-v9-oIt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -254,21 +263,35 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Equation Table View Controller-->
         <scene sceneID="MMr-Y5-W3v">
             <objects>
-                <tableViewController id="8Am-Rg-4Ul" sceneMemberID="viewController">
+                <tableViewController id="8Am-Rg-4Ul" customClass="EquationTableViewController" customModule="Memorizing_calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WOm-jH-Nrx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GGk-fa-xOV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="equationCell" id="GGk-fa-xOV">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GGk-fa-xOV" id="KVW-Z4-Mko">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz1-Ry-k9I">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="186" id="snZ-lG-Wku"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kz1-Ry-k9I" firstAttribute="top" secondItem="KVW-Z4-Mko" secondAttribute="topMargin" constant="4" id="6ls-AC-b00"/>
+                                        <constraint firstItem="kz1-Ry-k9I" firstAttribute="leading" secondItem="KVW-Z4-Mko" secondAttribute="leadingMargin" constant="8" id="HDp-3t-BM5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -280,7 +303,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHY-h6-YGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2054" y="139"/>
+            <point key="canvasLocation" x="2053.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lhL-H6-ypO">

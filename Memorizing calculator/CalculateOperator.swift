@@ -10,7 +10,7 @@ import Foundation
 
 enum CalculateOperator: String {
     case add = "+"
-    case Subtract = "-"
+    case subtract = "-"
     case equal = "="
     case clear = "C"
 }

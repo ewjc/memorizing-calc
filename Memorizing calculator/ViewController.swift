@@ -10,35 +10,75 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    enum calcOperator: String {
-        case add = "+"
-        case subtract = "-"
-        case equal = "="
-        case clear = ""
-    }
-    
-    var initialNumber = ""
+    var equationArray: [String]!
+    var runningNumber = ""
     var saveNumber = ""
-    var totalNumber = ""
+    var leftNumber = ""
+    var rightNumber = ""
+    var answer: Int!
+    var operand = ""
     
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var clearLabelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var subtractButton: UIButton!
     @IBOutlet weak var equalButton: UIButton!
+    
+    func calculate() {
+        var firstNumber = Int(leftNumber)
+        var secondNumber = Int(rightNumber)
+        
+        if operand == CalculateOperator.add.rawValue {
+            answer = firstNumber! + secondNumber!
+            answerLabel.text = String(answer)
+        } else if operand == CalculateOperator.subtract.rawValue {
+            answer = firstNumber! - secondNumber!
+            answerLabel.text = String(answer)
+        }
+    }
+    
+
+    
     @IBAction func numberButtonPressed(_ sender: UIButton) {
-        initialNumber += "\(sender.tag)"
-        answerLabel.text = "\(initialNumber)"
+        runningNumber += "\(sender.tag)"
+        answerLabel.text = "\(runningNumber)"
     }
     
     @IBAction func add(_ sender: UIButton) {
-        
+        if runningNumber != "" {
+            leftNumber = runningNumber
+            runningNumber = ""
+            answerLabel.text = "+"
+            operand = ""
+            operand = CalculateOperator.add.rawValue
+        }
     }
     
-    func processOperation (operation: calcOperator) {
-        
+    @IBAction func subtract(_ sender: UIButton) {
+        if runningNumber != "" {
+            leftNumber = runningNumber
+            runningNumber = ""
+            answerLabel.text = "-"
+            operand = ""
+            operand = CalculateOperator.subtract.rawValue
+        }
     }
+
     
+    @IBAction func equal(_ sender: UIButton) {
+        rightNumber = runningNumber
+        calculate()
+        var equation = "\(leftNumber) \(operand) \(rightNumber) = \(answer!)"
+        equationArray.append(equation)
+    }
+
+    
+    @IBAction func clear(_ sender: UIButton) {
+        runningNumber = ""
+        leftNumber = ""
+        rightNumber = ""
+        answerLabel.text = ""
+    }
     
     
     override func viewDidLoad() {

@@ -11,10 +11,11 @@ import UIKit
 class EquationTableViewController: UITableViewController {
     
     var VC: ViewController!
-    
+    @IBOutlet weak var completeEquationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,18 +30,14 @@ class EquationTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if VC.equationArray.count == nil {
-            return 5
-        } else {
         return VC.equationArray.count
-        }
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "equationCell") as! EquationTableViewCell
         
-        var equation = VC.equationArray[indexPath.row]
+        cell.completeEquationLabel.text = "\(VC.equationArray[indexPath.row])"
 
         return cell
     }

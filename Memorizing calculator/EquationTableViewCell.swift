@@ -9,9 +9,8 @@
 import UIKit
 
 class EquationTableViewCell: UITableViewCell {
+    @IBOutlet weak var completeEquationLabel: UILabel!
 
-    var equationTVC: EquationTableViewController!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,7 +19,7 @@ class EquationTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-
+        // Configure the view for the selected state
     }
 
 }

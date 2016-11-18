@@ -14,7 +14,7 @@
 		09149C601DDB7AC400B6D3E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09149C5E1DDB7AC400B6D3E4 /* LaunchScreen.storyboard */; };
 		09149C681DDB991800B6D3E4 /* CalculateOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09149C671DDB991800B6D3E4 /* CalculateOperator.swift */; };
 		09700D111DDE471E0045AE52 /* EquationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09700D101DDE471E0045AE52 /* EquationTableViewController.swift */; };
-		09700D131DDE48B90045AE52 /* EquationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09700D121DDE48B90045AE52 /* EquationTableViewCell.swift */; };
+		09700D191DDEE47F0045AE52 /* EquationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09700D181DDEE47F0045AE52 /* EquationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		09149C611DDB7AC400B6D3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09149C671DDB991800B6D3E4 /* CalculateOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateOperator.swift; sourceTree = "<group>"; };
 		09700D101DDE471E0045AE52 /* EquationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationTableViewController.swift; sourceTree = "<group>"; };
-		09700D121DDE48B90045AE52 /* EquationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationTableViewCell.swift; sourceTree = "<group>"; };
+		09700D181DDEE47F0045AE52 /* EquationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				09149C611DDB7AC400B6D3E4 /* Info.plist */,
 				09149C671DDB991800B6D3E4 /* CalculateOperator.swift */,
 				09700D101DDE471E0045AE52 /* EquationTableViewController.swift */,
-				09700D121DDE48B90045AE52 /* EquationTableViewCell.swift */,
+				09700D181DDEE47F0045AE52 /* EquationTableViewCell.swift */,
 			);
 			path = "Memorizing calculator";
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 				09149C561DDB7AC400B6D3E4 /* AppDelegate.swift in Sources */,
 				09149C681DDB991800B6D3E4 /* CalculateOperator.swift in Sources */,
 				09700D111DDE471E0045AE52 /* EquationTableViewController.swift in Sources */,
-				09700D131DDE48B90045AE52 /* EquationTableViewCell.swift in Sources */,
+				09700D191DDEE47F0045AE52 /* EquationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

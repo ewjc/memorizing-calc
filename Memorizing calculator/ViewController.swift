@@ -69,11 +69,13 @@ class ViewController: UIViewController {
     @IBAction func equal(_ sender: UIButton) {
         rightNumber = runningNumber
         calculate()
+        if answer != nil {
         var equation = "\(leftNumber) \(operand) \(rightNumber) = \(answer!)"
         equationArray.append(equation)
-        
+        rightNumber = ""
         completedResults.text = "Completed Results: \(equationArray.count)"
-        print(equationArray)
+            print(equationArray)
+        }
     }
 
     

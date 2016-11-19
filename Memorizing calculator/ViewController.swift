@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalButton: UIButton!
     @IBOutlet weak var completedResults: UILabel!
     
-    //MARK: Functions
+    // MARK: Functions
     func calculate() {
         var firstNumber = Int(leftNumber)
         var secondNumber = Int(rightNumber)
@@ -41,6 +41,12 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "destinationVC" {
+            let destinationVC = segue.destination as! EquationTableViewController
+            destinationVC.VC = self
+        }
+    }
     
     //MARK: IBActions
     @IBAction func numberButtonPressed(_ sender: UIButton) {
@@ -92,15 +98,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         completedResults.text = "Completed Results: \(equationArray.count)"
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "destinationVC" {
-            let destinationVC = segue.destination as! EquationTableViewController
-            destinationVC.VC = self
-        }
-    }
-    
-    
     
 }
 
